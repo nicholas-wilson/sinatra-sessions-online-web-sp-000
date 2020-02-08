@@ -16,13 +16,11 @@ class App < Sinatra::Base
 
   get '/first_exercise' do
     "Your first exercise will be to set your session key-value pair.\nIn the route: get '/set', write a line of code that sets the :foo key of the session hash equal to 'hello'.\nThen, navigate to the '/set' path."
-    session[:foo] = 'hello'
-    redirect '/set'
   end
 
   get '/set' do
     # set the :foo key of the session hash equal to 'hello' here!
-
+    session[:foo] = 'hello'
     if session[:foo] == 'hello'
       redirect '/fetch'
     else
